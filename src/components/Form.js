@@ -15,7 +15,6 @@ class Form extends React.Component {
       cardRare,
       isSaveButtonDisabled,
       onSaveButtonClick,
-      //hasTrunfo,
     } = this.props;
     return (
       <div>
@@ -115,7 +114,6 @@ Form.propTypes = {
   cardImage: propTypes.string.isRequired,
   cardRare: propTypes.string.isRequired,
   cardTrunfo: propTypes.bool.isRequired,
-  hasTrunfo: propTypes.bool.isRequired,
   onSaveButtonClick: propTypes.func.isRequired,
   onInputChange: propTypes.func.isRequired,
   isSaveButtonDisabled: propTypes.bool.isRequired,
