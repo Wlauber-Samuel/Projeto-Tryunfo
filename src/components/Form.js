@@ -15,7 +15,7 @@ class Form extends React.Component {
       cardRare,
       isSaveButtonDisabled,
       onSaveButtonClick,
-      hasTrunfo,
+      //hasTrunfo,
     } = this.props;
     return (
       <div>
