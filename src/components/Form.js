@@ -96,7 +96,6 @@ class Form extends React.Component {
           id="checkbox-super-trunfo"
           checked={ cardTrunfo }
           onChange={ onInputChange }
-          placeholder="rare"
         />
 
         <button
