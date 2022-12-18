@@ -22,59 +22,66 @@ class Form extends React.Component {
         <input
           type="text"
           data-testid="name-input"
+          id="name-input"
           value={ cardName }
           onChange={ onInputChange }
-          placeholder="name:"
+          placeholder="Nome do Celular:"
         />
 
         <br />
         <input
           type="textarea"
           data-testid="description-input"
+          id="description-input"
           value={ cardDescription }
           onChange={ onInputChange }
-          placeholder="descrption:"
+          placeholder="Descrição do Aparelho:"
         />
 
         <br />
         <input
           type="Number"
           data-testid="attr1-input"
+          id="attr1-input"
           value={ cardAttr1 }
           onChange={ onInputChange }
-          placeholder="attr-1"
+          placeholder="Armazenamento:"
         />
 
         <br />
         <input
           type="Number"
           data-testid="attr2-input"
+          id="attr2-input"
           value={ cardAttr2 }
           onChange={ onInputChange }
-          placeholder="attr-2"
+          placeholder="Câmera:"
         />
 
         <br />
         <input
           type="Number"
           data-testid="attr3-input"
+          id="attr3-input"
           value={ cardAttr3 }
           onChange={ onInputChange }
-          placeholder="attr-3"
+          placeholder="Tamanho da Tela:"
         />
 
         <br />
         <input
           type="text"
           data-testid="image-input"
+          id="image-input"
           value={ cardImage }
           onChange={ onInputChange }
-          placeholder="image"
+          placeholder="Adicione uma imagem"
         />
 
         <br />
         <select
           data-testid="rare-input"
+          id="card-rare"
           value={ cardRare }
           onChange={ onInputChange }
         >
@@ -86,6 +93,7 @@ class Form extends React.Component {
         <input
           type="checkbox"
           data-testid="trunfo-input"
+          id="checkbox-super-trunfo"
           checked={ cardTrunfo }
           onChange={ onInputChange }
           placeholder="rare"
@@ -94,6 +102,7 @@ class Form extends React.Component {
         <button
           type="button"
           data-testid="save-button"
+          id="save-button"
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
         >

@@ -1,3 +1,6 @@
+* {
+  text-align: center;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +13,85 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html {
+  min-height: 100%;
+  background-image: url(backgroud-smartphone.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#name-input {
+  height: 25px;
+  margin: 0 auto;
+  border: none; /* <-- This thing here */
+  border:solid 1px #ccc;
+  border-radius: 10px;
+}
+
+#description-input {
+  height: 25px;
+  margin: 0 auto;
+  border: none; /* <-- This thing here */
+  border:solid 1px #ccc;
+  border-radius: 10px;
+}
+
+#attr1-input {
+  height: 25px;
+  margin: 0 auto;
+  border: none; /* <-- This thing here */
+  border:solid 1px #ccc;
+  border-radius: 10px;
+}
+
+#attr2-input {
+  height: 25px;
+  margin: 0 auto;
+  border: none; /* <-- This thing here */
+  border:solid 1px #ccc;
+  border-radius: 10px;
+}
+
+#attr3-input {
+  height: 25px;
+  margin: 0 auto;
+  border: none; /* <-- This thing here */
+  border:solid 1px #ccc;
+  border-radius: 10px;
+}
+
+#image-input {
+  height: 25px;
+  margin: 0 auto;
+  border: none; /* <-- This thing here */
+  border:solid 1px #ccc;
+  border-radius: 10px;
+}
+
+#card-rare {
+  height: 25px;
+  margin: 0 auto;
+  border: none; /* <-- This thing here */
+  border:solid 1px #ccc;
+  border-radius: 10px;
+}
+
+#checkbox-super-trunfo {
+  width: 45px;
+  height: 15px;
+  background: #555;
+  margin: 20px 80px;
+  position: relative;
+  border-radius: 5px;
+}
+
+#save-button {
+  height: 25px;
+  margin: 0 auto;
+  border: none; /* <-- This thing here */
+  border:solid 1px #ccc;
+  border-radius: 10px;
 }
