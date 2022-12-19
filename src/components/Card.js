@@ -40,3 +40,4 @@ Card.propTypes = {
 };
 
 export default Card;
+//teste
