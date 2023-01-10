@@ -2,6 +2,13 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 class Form extends React.Component {
+  state = {
+    name: '',
+    description: '',
+    storage: '',
+    camera: '',
+    screenSize: '',
+  }
   render() {
     const {
       cardName,
@@ -16,6 +23,7 @@ class Form extends React.Component {
       isSaveButtonDisabled,
       onSaveButtonClick,
     } = this.props;
+
     return (
       <div>
         <h1>ADICIONE UMA CARTA</h1>
@@ -24,7 +32,7 @@ class Form extends React.Component {
           data-testid="name-input"
           id="name-input"
           value={ cardName }
-          onChange={ onInputChange }
+          onChange={ this.onInputChange }
           placeholder="Nome do Celular:"
         />
 
