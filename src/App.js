@@ -10,17 +10,29 @@ class App extends React.Component {
     cardAttr2: '',
     cardAttr3: '',
     cardImage: '',
-    cardRare: 'normal',
+    cardRare: '',
     cardTrunfo: false,
     savedCard: [],
   };
 
   onInputChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({[name]: value});
+    const { name } = event.target;
+    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value; 
+    this.setState({ [name]: value });
   };
 
+
   render() {
+    const {
+      cardName,
+      cardDescription,
+      cardImage,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardRare,
+      cardTrunfo,
+    } = this.state;
     return (
       <div>
         <h1>Tryunfo</h1>
@@ -33,9 +45,7 @@ class App extends React.Component {
           cardAttr3={ cardAttr3 }
           cardRare={ cardRare }
           onInputChange={ this.onInputChange }
-          isSaveButtonDisabled={ this.forms() }
           onSaveButtonClick={ this.onSaveButtonClick }
-          cardTrunfo={ this.cardTrunfo() }
 
         />
         <Card
@@ -48,7 +58,6 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
-        //{ savedCard.map((cards) => (<Card key={ cards.cardName } { ...cards } />)) }
       </div>
     );
   }

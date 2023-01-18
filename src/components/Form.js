@@ -2,13 +2,6 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 class Form extends React.Component {
-  state = {
-    name: '',
-    description: '',
-    storage: '',
-    camera: '',
-    screenSize: '',
-  }
   render() {
     const {
       cardName,
@@ -32,7 +25,8 @@ class Form extends React.Component {
           data-testid="name-input"
           id="name-input"
           value={ cardName }
-          onChange={ this.onInputChange }
+          name="cardName"
+          onChange={ onInputChange }
           placeholder="Nome do Celular:"
         />
 
@@ -42,6 +36,7 @@ class Form extends React.Component {
           data-testid="description-input"
           id="description-input"
           value={ cardDescription }
+          name="cardDescription"
           onChange={ onInputChange }
           placeholder="Descrição do Aparelho:"
         />
@@ -52,6 +47,7 @@ class Form extends React.Component {
           data-testid="attr1-input"
           id="attr1-input"
           value={ cardAttr1 }
+          name="cardAttr1"
           onChange={ onInputChange }
           placeholder="Armazenamento:"
         />
@@ -62,6 +58,7 @@ class Form extends React.Component {
           data-testid="attr2-input"
           id="attr2-input"
           value={ cardAttr2 }
+          name="cardAttr2"
           onChange={ onInputChange }
           placeholder="Câmera:"
         />
@@ -72,6 +69,7 @@ class Form extends React.Component {
           data-testid="attr3-input"
           id="attr3-input"
           value={ cardAttr3 }
+          name="cardAttr3"
           onChange={ onInputChange }
           placeholder="Tamanho da Tela:"
         />
@@ -82,6 +80,7 @@ class Form extends React.Component {
           data-testid="image-input"
           id="image-input"
           value={ cardImage }
+          name="cardImage"
           onChange={ onInputChange }
           placeholder="Adicione uma imagem"
         />
@@ -91,6 +90,7 @@ class Form extends React.Component {
           data-testid="rare-input"
           id="card-rare"
           value={ cardRare }
+          name="cardRare"
           onChange={ onInputChange }
         >
           <option value="normal">Normal</option>
@@ -103,6 +103,7 @@ class Form extends React.Component {
           data-testid="trunfo-input"
           id="checkbox-super-trunfo"
           checked={ cardTrunfo }
+          name="cardTrunfo"
           onChange={ onInputChange }
           placeholder="rare"
         />
@@ -111,6 +112,7 @@ class Form extends React.Component {
           type="button"
           data-testid="save-button"
           id="save-button"
+          name="savedCard"
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
         >
