@@ -12,15 +12,15 @@ class App extends React.Component {
     cardImage: '',
     cardRare: '',
     cardTrunfo: false,
-    savedCard: [],
   };
 
   onInputChange = (event) => {
     const { name } = event.target;
-    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value; 
+    const value = event.target.type === 'checkbox'
+      ? event.target.checked
+      : event.target.value;
     this.setState({ [name]: value });
   };
-
 
   render() {
     const {
