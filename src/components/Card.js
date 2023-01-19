@@ -53,7 +53,7 @@ class Card extends React.Component {
         <img
           src={ cardImage }
           data-testid="image-card"
-          alt={ cardImage.name }
+          alt={ cardName }
           className="previewImage-card"
         />
 
