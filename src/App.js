@@ -112,6 +112,7 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
           isSaveButtonDisabled={ this.forms() }
+          cardTrunfo={ this.hasTrunfo }
 
         />
         <Card
