@@ -69,6 +69,7 @@ html {
   border: none; /* <-- This thing here */
   border:solid 1px #ccc;
   border-radius: 10px;
+
 }
 
 #card-rare {
@@ -93,5 +94,65 @@ html {
   margin: 0 auto;
   border: none; /* <-- This thing here */
   border:solid 1px #ccc;
+  border-radius: 10px;
+}
+
+.previewName-card{
+  width: 200px;
+  height: 25px;
+  background-color: #ccc;
+  margin: 0 auto;
+  border: none; /* <-- This thing here */
+  border:solid 1px #ccc;
+  border-radius: 10px;
+}
+
+.previewDescription-card {
+  width: 200px;
+  height: 25px;
+  background-color: #ccc;
+  margin: 0 auto;
+  border: none; /* <-- This thing here */
+  border:solid 1px black;
+  border-radius: 10px;
+}
+
+.previewAttr1-card {
+  width: 200px;
+  height: 25px;
+  background-color: #ccc;
+  margin: 0 auto;
+  border: none; /* <-- This thing here */
+  border:solid 1px black;
+  border-radius: 10px;
+}
+
+.previewAttr2-card {
+  width: 200px;
+  height: 25px;
+  background-color: #ccc;
+  margin: 0 auto;
+  border: none; /* <-- This thing here */
+  border:solid 1px black;
+  border-radius: 10px;
+}
+
+.previewAttr3-card {
+  width: 200px;
+  height: 25px;
+  background-color: #ccc;
+  margin: 0 auto;
+  border: none; /* <-- This thing here */
+  border:solid 1px black;
+  border-radius: 10px;
+}
+
+.previewImage-card {
+  width: 200px;
+  height: 25px;
+  background-color: #ccc;
+  margin: 0 auto;
+  border: none; /* <-- This thing here */
+  border:solid 1px black;
   border-radius: 10px;
 }
