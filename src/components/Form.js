@@ -6,13 +6,13 @@ class Form extends React.Component {
     const {
       cardName,
       cardDescription,
-      onInputChange,
       cardAttr1,
       cardAttr2,
       cardAttr3,
       cardImage,
       cardTrunfo,
       cardRare,
+      onInputChange,
       isSaveButtonDisabled,
       onSaveButtonClick,
     } = this.props;

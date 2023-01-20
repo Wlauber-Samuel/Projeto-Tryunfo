@@ -35,27 +35,28 @@ class App extends React.Component {
       cardTrunfo,
     } = this.state;
 
-    this.setState({
+    this.setState((prev) => ({
       savedCard: [
-        ...savedCard,
+        ...prev.savedCard,
         {
           cardName,
           cardDescription,
-          cardImage,
-          cardRare,
           cardAttr1,
           cardAttr2,
           cardAttr3,
+          cardImage,
+          cardRare,
           cardTrunfo,
-        },
-      ],
+        }],
+    }));
+    this.setState({
       cardName: '',
       cardDescription: '',
-      cardImage: '',
-      cardRare: '',
       cardAttr1: '0',
       cardAttr2: '0',
       cardAttr3: '0',
+      cardImage: '',
+      cardRare: 'normal',
       cardTrunfo: false,
     });
   };
@@ -98,6 +99,7 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
     } = this.state;
+
     return (
       <div>
         <h1>Tryunfo</h1>
