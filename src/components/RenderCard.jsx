@@ -7,22 +7,27 @@ export default class RenderCard extends Component {
     const {
       savedCard,
       deleteCards,
+      nameFilter,
     } = this.props;
-    console.log(savedCard);
+
+    const nameLowerCase = nameFilter.toLowerCase();
+    console.log(nameFilter);
     return (
       <div>
-        { savedCard.map((card, index) => (
-          <div key={ index }>
-            <Card { ...card } />
-            <button
-              type="button"
-              data-testid="delete-button"
-              onClick={ () => deleteCards(index) }
-            >
-              Excluir
-            </button>
-          </div>
-        )) }
+        { savedCard.filter(({ cardName }) => cardName.toLowerCase()
+          .includes(nameLowerCase))
+          .map((card, index) => (
+            <div key={ index }>
+              <Card { ...card } />
+              <button
+                type="button"
+                data-testid="delete-button"
+                onClick={ () => deleteCards(index) }
+              >
+                Excluir
+              </button>
+            </div>
+          )) }
       </div>
     );
   }

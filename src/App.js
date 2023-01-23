@@ -14,6 +14,7 @@ class App extends React.Component {
     cardRare: '',
     cardTrunfo: false,
     savedCard: [],
+    nameFilter: '',
   };
 
   onInputChange = (event) => {
@@ -87,14 +88,15 @@ class App extends React.Component {
       cardAttr3,
       cardImage } = this.state;
 
-    const name = cardName === '';
-    const img = cardImage === '';
-    const description = cardDescription === '';
-    const attr1 = Number(cardAttr1) < max || Number(cardAttr1) > min;
-    const attr2 = Number(cardAttr2) < max || Number(cardAttr2) > min;
-    const attr3 = Number(cardAttr3) < max || Number(cardAttr3) > min;
+    const name = cardName !== '';
+    const img = cardImage !== '';
+    const description = cardDescription !== '';
+    const attr1 = Number(cardAttr1) >= min && Number(cardAttr1) <= max;
+    const attr2 = Number(cardAttr2) >= min && Number(cardAttr2) <= max;
+    const attr3 = Number(cardAttr3) >= min && Number(cardAttr3) <= max;
+
     const totalSum = Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3) <= maxsum;
-    return !(name || img || description || attr1 || attr2 || attr3 || totalSum);
+    return !(name && img && description && attr1 && attr2 && attr3 && totalSum);
   };
 
   hasTrunfo = () => {
@@ -113,6 +115,7 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
       savedCard,
+      nameFilter,
     } = this.state;
 
     return (
@@ -142,9 +145,16 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+        <input
+          type="text"
+          data-testid="name-filter"
+          name="nameFilter"
+          onChange={ this.onInputChange }
+        />
         <RenderCard
           savedCard={ savedCard }
           deleteCards={ this.deleteCards }
+          nameFilter={ nameFilter }
         />
       </div>
     );
