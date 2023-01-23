@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import RenderCard from './components/RenderCard';
 
 class App extends React.Component {
   state = {
@@ -35,6 +36,12 @@ class App extends React.Component {
       cardTrunfo,
     } = this.state;
 
+    // if (cardTrunfo) {
+    //   this.setState({
+    //     hasTrunfo: true,
+    //     cardTrunfo: false,
+    //   });
+    // }
     this.setState((prev) => ({
       savedCard: [
         ...prev.savedCard,
@@ -57,8 +64,15 @@ class App extends React.Component {
       cardAttr3: '0',
       cardImage: '',
       cardRare: 'normal',
-      cardTrunfo: false,
     });
+  };
+
+  deleteCards = (index) => {
+    const {
+      savedCard,
+    } = this.state;
+    savedCard.splice(index, 1);
+    this.setState({ savedCard });
   };
 
   forms = () => {
@@ -73,14 +87,14 @@ class App extends React.Component {
       cardAttr3,
       cardImage } = this.state;
 
-    const name = cardName !== '';
-    const img = cardImage !== '';
-    const description = cardDescription !== '';
-    const attr1 = cardAttr1 <= max && cardAttr1 >= min;
-    const attr2 = cardAttr2 <= max && cardAttr2 >= min;
-    const attr3 = cardAttr3 <= max && cardAttr3 >= min;
+    const name = cardName === '';
+    const img = cardImage === '';
+    const description = cardDescription === '';
+    const attr1 = Number(cardAttr1) < max || Number(cardAttr1) > min;
+    const attr2 = Number(cardAttr2) < max || Number(cardAttr2) > min;
+    const attr3 = Number(cardAttr3) < max || Number(cardAttr3) > min;
     const totalSum = Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3) <= maxsum;
-    return !(name && img && description && attr1 && attr2 && attr3 && totalSum);
+    return !(name || img || description || attr1 || attr2 || attr3 || totalSum);
   };
 
   hasTrunfo = () => {
@@ -98,6 +112,7 @@ class App extends React.Component {
       cardAttr3,
       cardRare,
       cardTrunfo,
+      savedCard,
     } = this.state;
 
     return (
@@ -126,6 +141,10 @@ class App extends React.Component {
           cardAttr3={ cardAttr3 }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
+        />
+        <RenderCard
+          savedCard={ savedCard }
+          deleteCards={ this.deleteCards }
         />
       </div>
     );
