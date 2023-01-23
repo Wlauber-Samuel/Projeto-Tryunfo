@@ -15,6 +15,7 @@ class App extends React.Component {
     cardTrunfo: false,
     savedCard: [],
     nameFilter: '',
+    filterRare: 'todas',
   };
 
   onInputChange = (event) => {
@@ -116,6 +117,7 @@ class App extends React.Component {
       cardTrunfo,
       savedCard,
       nameFilter,
+      filterRare,
     } = this.state;
 
     return (
@@ -135,6 +137,7 @@ class App extends React.Component {
           hasTrunfo={ this.hasTrunfo() }
 
         />
+
         <Card
           cardName={ cardName }
           cardDescription={ cardDescription }
@@ -145,16 +148,31 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+
         <input
           type="text"
           data-testid="name-filter"
           name="nameFilter"
           onChange={ this.onInputChange }
         />
+
+        <select
+          data-testid="rare-filter"
+          id="card-rare"
+          name="filterRare"
+          onChange={ this.onInputChange }
+        >
+          <option value="todas">Todas</option>
+          <option value="normal">Normal</option>
+          <option value="raro">Raro</option>
+          <option value="muito raro">Muito raro</option>
+        </select>
+
         <RenderCard
           savedCard={ savedCard }
           deleteCards={ this.deleteCards }
           nameFilter={ nameFilter }
+          filterRare={ filterRare }
         />
       </div>
     );
