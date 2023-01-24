@@ -18,7 +18,7 @@ class Form extends React.Component {
       hasTrunfo,
     } = this.props;
 
-    console.log(isSaveButtonDisabled);
+    console.log(cardTrunfo);
     return (
       <div>
         <h1>ADICIONE UMA CARTA</h1>

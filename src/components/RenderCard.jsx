@@ -9,6 +9,7 @@ export default class RenderCard extends Component {
       deleteCards,
       nameFilter,
       filterRare,
+      filterTrunfo,
     } = this.props;
 
     const nameLowerCase = nameFilter.toLowerCase();
@@ -19,6 +20,7 @@ export default class RenderCard extends Component {
           .includes(nameLowerCase))
           .filter((card) => (filterRare === 'todas'
             ? card : card.cardRare === filterRare))
+          .filter((card) => (filterTrunfo === true ? card.cardTrunfo : card))
           .map((card, index) => (
             <div key={ index }>
               <Card { ...card } />
