@@ -75,8 +75,14 @@ class App extends React.Component {
     const {
       savedCard,
     } = this.state;
+    const card = { ...savedCard[index] };
     savedCard.splice(index, 1);
-    this.setState({ savedCard });
+    this.setState((prevState) => {
+      this.setState({
+        savedCard,
+        hasTrunfo: card.cardTrunfo ? false : prevState.hasTrunfo,
+      });
+    });
   };
 
   forms = () => {
